@@ -31,7 +31,7 @@ git add -A  →  有改动就 git commit  →  git pull --rebase  →  git push
 | 等 8 秒静默后自动 commit | `14:02:32` |
 | 推送成功 | `14:02:41` |
 
-也就是**保存后大约 10 秒**就能在 GitHub 上看到。
+也就是**保存后 10～20 秒**（8 秒静默 + 提交 + 推送）就能在 GitHub 上看到。
 
 ---
 
