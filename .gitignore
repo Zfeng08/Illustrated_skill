@@ -1,0 +1,12 @@
+# 自动同步产生的运行时文件（不需要上传）
+.autosync/logs/
+.autosync/state/
+.autosync/*.lock
+
+# 常见临时文件 / 系统文件
+*.tmp
+*.temp
+~$*
+.DS_Store
+Thumbs.db
+desktop.ini
