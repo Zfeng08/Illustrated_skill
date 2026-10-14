@@ -90,8 +90,14 @@ function Test-IgnoredPath {
         if ($p.StartsWith($dir + '/', [System.StringComparison]::OrdinalIgnoreCase)) { return $true }
     }
     if ($p -like '*.lock') { return $true }
-    # Scratch files/dirs created by editors and the note-writing tools.
-    if ($p -like '*.tmp' -or $p -like '*.tmpdir' -or $p -like '~$*') { return $true }
+
+    # NOTE: deliberately do NOT ignore '*.tmp' / '*.tmpdir' here.
+    # Editors and note tools save atomically (write a temp file, then rename it into place),
+    # so the temp name is frequently the ONLY event we ever see for a genuine edit - for a
+    # file in the repo root there is no parent-directory event to fall back on, and the edit
+    # would silently never sync. Those temp files are deleted within milliseconds, long
+    # before the debounce elapses, so they are never actually staged.
+    if ($p -like '~$*') { return $true }
     return $false
 }
 

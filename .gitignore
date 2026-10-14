@@ -6,6 +6,7 @@
 # 常见临时文件 / 系统文件
 *.tmp
 *.temp
+*.tmpdir/
 ~$*
 .DS_Store
 Thumbs.db
