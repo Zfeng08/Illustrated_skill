@@ -39,8 +39,10 @@ $LogFile     = Join-Path $LogDir 'autosync.log'
 $MutexName   = 'Global\IllustratedSkillAutoSync'
 $MaxLogBytes = 1MB
 
-# Paths that must never trigger a sync (otherwise the log/git writes would loop forever).
-$IgnoredPrefixes = @('.git/', '.autosync/logs/', '.autosync/state/')
+# Directories that must never trigger a sync: git's own metadata plus this script's runtime
+# files. Both the directory itself AND its contents are matched - watching only for the
+# "dir/" prefix would let a bare ".git" event through and re-trigger the watcher forever.
+$IgnoredDirectories = @('.git', '.autosync/logs', '.autosync/state')
 
 # Avoid a hard dependency on the machine's code page for git's UTF-8 output.
 try {
@@ -82,10 +84,14 @@ function Test-IgnoredPath {
     param([string]$RelativePath)
     if ([string]::IsNullOrEmpty($RelativePath)) { return $false }
     $p = $RelativePath.Replace('\', '/').TrimStart('/')
-    foreach ($prefix in $IgnoredPrefixes) {
-        if ($p.StartsWith($prefix, [System.StringComparison]::OrdinalIgnoreCase)) { return $true }
+
+    foreach ($dir in $IgnoredDirectories) {
+        if ($p.Equals($dir, [System.StringComparison]::OrdinalIgnoreCase)) { return $true }
+        if ($p.StartsWith($dir + '/', [System.StringComparison]::OrdinalIgnoreCase)) { return $true }
     }
     if ($p -like '*.lock') { return $true }
+    # Scratch files/dirs created by editors and the note-writing tools.
+    if ($p -like '*.tmp' -or $p -like '*.tmpdir' -or $p -like '~$*') { return $true }
     return $false
 }
 
