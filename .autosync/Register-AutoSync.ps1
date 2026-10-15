@@ -39,11 +39,15 @@ $ErrorActionPreference = 'Stop'
 $RepoRoot     = Split-Path -Parent $PSScriptRoot
 $AutoSync     = Join-Path $PSScriptRoot 'AutoSync.ps1'
 $FallbackSync = Join-Path $PSScriptRoot 'FallbackSync.ps1'
+$RunHidden    = Join-Path $PSScriptRoot 'RunHidden.vbs'
 $TaskPrefix   = 'Illustrated_skill-AutoSync'
 $WatchTask    = "$TaskPrefix-Watch"
 $FallbackTask = "$TaskPrefix-Fallback"
 
-$PowerShellExe = Join-Path $env:SystemRoot 'System32\WindowsPowerShell\v1.0\powershell.exe'
+# wscript.exe is a GUI-subsystem host: it allocates no console, so the tasks never flash a
+# PowerShell window (PowerShell's own -WindowStyle Hidden is not enough when Windows Terminal
+# is the default console host). See the header of RunHidden.vbs.
+$WscriptExe = Join-Path $env:SystemRoot 'System32\wscript.exe'
 
 # --- Remove ----------------------------------------------------------------
 if ($Unregister) {
@@ -59,7 +63,7 @@ if ($Unregister) {
 }
 
 # --- Pre-flight ------------------------------------------------------------
-foreach ($path in @($AutoSync, $FallbackSync, $PowerShellExe)) {
+foreach ($path in @($AutoSync, $FallbackSync, $RunHidden, $WscriptExe)) {
     if (-not (Test-Path -LiteralPath $path)) { throw "Required file not found: $path" }
 }
 if (-not (Test-Path -LiteralPath (Join-Path $RepoRoot '.git'))) {
@@ -86,8 +90,8 @@ $settings = New-ScheduledTaskSettingsSet `
 
 # --- Task 1: watcher (starts at logon, runs indefinitely) -------------------
 $watchAction = New-ScheduledTaskAction `
-    -Execute $PowerShellExe `
-    -Argument ('-NoProfile -NonInteractive -WindowStyle Hidden -ExecutionPolicy Bypass -File "{0}"' -f $AutoSync) `
+    -Execute $WscriptExe `
+    -Argument ('//B //Nologo "{0}" "AutoSync.ps1"' -f $RunHidden) `
     -WorkingDirectory $RepoRoot
 
 $watchTrigger = New-ScheduledTaskTrigger -AtLogOn -User ("{0}\{1}" -f $env:USERDOMAIN, $env:USERNAME)
@@ -105,8 +109,8 @@ Write-Host "Registered: $WatchTask  (starts at logon)"
 
 # --- Task 2: fallback (every N minutes) ------------------------------------
 $fallbackAction = New-ScheduledTaskAction `
-    -Execute $PowerShellExe `
-    -Argument ('-NoProfile -NonInteractive -WindowStyle Hidden -ExecutionPolicy Bypass -File "{0}"' -f $FallbackSync) `
+    -Execute $WscriptExe `
+    -Argument ('//B //Nologo "{0}" "FallbackSync.ps1"' -f $RunHidden) `
     -WorkingDirectory $RepoRoot
 
 $fallbackTrigger = New-ScheduledTaskTrigger `
