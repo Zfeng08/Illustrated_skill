@@ -1,0 +1,40 @@
+﻿**********************
+Windows PowerShell 脚本开始
+开始时间: 20261113160406
+用户名: DAMON\10625
+RunAs 用户: DAMON\10625
+配置名称: 
+计算机: DAMON (Microsoft Windows NT 10.0.26200.0)
+主机应用程序: C:\windows\System32\WindowsPowerShell\v1.0\powershell.exe -NoProfile -ExecutionPolicy Bypass -File C:\Users\10625\Desktop\Illustrated_skill\network-fix\restore-github.ps1 -NoPause
+进程 ID: 33096
+PSVersion: 5.1.26100.9168
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.26100.9168
+BuildVersion: 10.0.26100.9168
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+[1/5] Removing GitHub hosts pins...
+[2/5] Starting WARP service...
+[3/5] Connecting tunnel...
+      Success
+      warp status: Status update: Connected Network: healthy
+[4/5] Flushing DNS...
+[5/5] Verifying...
+      github.com                       200|1.632119
+      api.github.com                   200|2.279170
+      raw.githubusercontent.com        200|0.804540
+      www.cloudflare.com               200|4.632885
+      www.baidu.com                    200|1.835254
+
+Tunnel routes now:
+13
+
+Done. GitHub should work through WARP now.
+Note: Cloudflare-CDN sites carry ~215ms + packet loss while WARP is on.
+**********************
+Windows PowerShell 脚本结束
+结束时间: 20261113160431
+**********************
