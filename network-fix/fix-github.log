@@ -1,0 +1,47 @@
+﻿**********************
+Windows PowerShell 脚本开始
+开始时间: 20261113155819
+用户名: DAMON\10625
+RunAs 用户: DAMON\10625
+配置名称: 
+计算机: DAMON (Microsoft Windows NT 10.0.26200.0)
+主机应用程序: C:\windows\System32\WindowsPowerShell\v1.0\powershell.exe -NoProfile -ExecutionPolicy Bypass -File C:\Users\10625\Desktop\Illustrated_skill\network-fix\fix-github.ps1 -NoPause
+进程 ID: 32740
+PSVersion: 5.1.26100.9168
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.26100.9168
+BuildVersion: 10.0.26100.9168
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+== Scanning GitHub IPs ==
+  OK    140.82.112.3     2.60s
+  OK    140.82.112.4     1.87s
+  OK    140.82.113.3     1.94s
+  OK    140.82.113.4     1.44s
+  OK    140.82.114.3     1.98s
+  OK    140.82.114.4     1.47s
+  --    140.82.116.3     unreachable
+  --    140.82.121.3     unreachable
+  --    140.82.121.4     unreachable
+  OK    20.27.177.113    0.52s
+  OK    20.200.245.247   0.75s
+  OK    20.205.243.166   0.86s
+  OK    20.233.83.145    1.21s
+  --    20.247.166.64    unreachable
+  --    20.247.166.65    unreachable
+  OK    20.6.7.17        0.55s
+
+Selected: 20.27.177.113  (0.52s)
+
+hosts updated + DNS cache flushed. Verifying...
+  github.com/login -> 200|0.398113
+
+GitHub is working. Open https://github.com in your browser.
+
+**********************
+Windows PowerShell 脚本结束
+结束时间: 20261113155849
+**********************
