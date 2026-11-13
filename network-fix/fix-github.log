@@ -1,0 +1,71 @@
+﻿**********************
+Windows PowerShell 脚本开始
+开始时间: 20261113160039
+用户名: DAMON\10625
+RunAs 用户: DAMON\10625
+配置名称: 
+计算机: DAMON (Microsoft Windows NT 10.0.26200.0)
+主机应用程序: C:\windows\System32\WindowsPowerShell\v1.0\powershell.exe -NoProfile -ExecutionPolicy Bypass -File C:\Users\10625\Desktop\Illustrated_skill\network-fix\fix-github.ps1 -NoPause
+进程 ID: 17004
+PSVersion: 5.1.26100.9168
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.26100.9168
+BuildVersion: 10.0.26100.9168
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+
+== github.com ==
+   --   20.27.177.113    unreachable
+   OK   20.200.245.247   200  0.70s
+   OK   20.205.243.166   200  0.82s
+   --   20.233.83.145    unreachable
+   --   20.6.7.17        unreachable
+   OK   140.82.112.3     200  1.52s
+   --   140.82.112.4     unreachable
+   --   140.82.113.3     unreachable
+   --   140.82.113.4     unreachable
+   --   140.82.114.3     unreachable
+   --   140.82.114.4     unreachable
+   --   140.82.116.3     unreachable
+   --   140.82.121.3     unreachable
+   --   140.82.121.4     unreachable
+   => pick 20.200.245.247  (0.70s)
+
+== raw.githubusercontent.com ==
+   OK   185.199.111.133  200  0.48s
+   OK   185.199.110.133  200  0.77s
+   OK   185.199.109.133  200  0.61s
+   OK   185.199.108.133  200  1.32s
+   => pick 185.199.111.133  (0.48s)
+
+== gist.github.com ==
+   --   20.27.177.113    unreachable
+   --   20.200.245.247   unreachable
+   --   20.205.243.166   unreachable
+   --   20.233.83.145    unreachable
+   --   20.6.7.17        unreachable
+   --   140.82.112.3     unreachable
+   --   140.82.112.4     unreachable
+   --   140.82.113.3     unreachable
+   --   140.82.113.4     unreachable
+   --   140.82.114.3     unreachable
+   --   140.82.114.4     unreachable
+   --   140.82.116.3     unreachable
+   --   140.82.121.3     unreachable
+   --   140.82.121.4     unreachable
+   => NO WORKING IP (leave DNS as-is)
+
+== hosts updated, verifying via normal DNS ==
+   BAD  github.com                         curl: (28) Operation timed out after 8005 milliseconds with 0 bytes received 000|8.005392
+   OK   raw.githubusercontent.com          200|0.614175
+   BAD  gist.github.com                    curl: (28) Connection timed out after 8010 milliseconds 000|8.010133
+
+Some domains still fail - run fix-github.cmd again.
+
+**********************
+Windows PowerShell 脚本结束
+结束时间: 20261113160205
+**********************
