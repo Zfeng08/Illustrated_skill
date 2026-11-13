@@ -2,3 +2,18 @@
 15:02:31  backup dir: C:\Users\10625\Desktop\Illustrated_skill\network-fix\backup-20261113-150231
 15:02:31  OK  hosts backed up
 15:02:32  OK  dns / service / routes / warp-status saved
+15:02:43  OK  DNS -> 223.5.5.5 (AliDNS) + 119.29.29.29 (DNSPod)
+15:02:43  warp-cli: Success
+15:02:46  OK  CloudflareWARP service stopped
+15:02:48  OK  CloudflareWARP start type -> Manual
+15:02:48  OK  hosts: 2 line(s) commented out
+15:02:48  OK  DNS cache flushed
+15:02:50  --- VERIFY ---
+15:02:50  dns| 鎺ュ彛 "WLAN" 鐨勯厤缃?
+15:02:50  dns| 闈欐€侀厤缃殑 DNS 鏈嶅姟鍣?            223.5.5.5
+15:02:50  dns| 119.29.29.29
+15:02:50  dns| 鐢ㄥ摢涓墠缂€娉ㄥ唽:                   鍙槸涓昏
+15:02:50  tunnel routes remaining: 0
+15:02:50  service: Stopped / Manual
+15:02:50  hosts lines still referencing github (commented included): 2
+15:02:50  === DONE ===
