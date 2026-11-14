@@ -29,15 +29,15 @@ $targets = [ordered]@{
   }
   'api.github.com' = @{
     Pool = @('140.82.112.5','140.82.113.5','140.82.114.5','20.205.243.168')
-    Path = '/zen'; MinSize = 5; Contains = 'octocat'; TimeoutSec = 8
+    Path = '/'; MinSize = 100; Contains = 'current_user_url'; TimeoutSec = 8
   }
   'codeload.github.com' = @{
     Pool = @('140.82.112.9','140.82.113.9','140.82.114.9','140.82.116.9')
-    Path = '/'; MinSize = 1; Contains = ''; TimeoutSec = 8
+    Path = '/'; MinSize = 0; Contains = ''; Loose = $true; TimeoutSec = 8
   }
   'gist.github.com' = @{
-    Pool = $ghPool; Path = '/'; MinSize = 100000; Contains = 'github'
-    Aliases = @('gist.github.com'); TimeoutSec = 10
+    Pool = $ghPool; Path = '/'; MinSize = 1000; Contains = ''; TimeoutSec = 10
+    Aliases = @('gist.github.com')
   }
   'raw.githubusercontent.com' = @{
     Pool = $rawPool; Path = '/github/gitignore/main/README.md'
@@ -60,13 +60,20 @@ $targets = [ordered]@{
 }
 
 function Test-One {
-  param([string]$HostName, [string]$Ip, [string]$Path, [int]$MinSize, [string]$Contains, [int]$TimeoutSec)
+  param([string]$HostName, [string]$Ip, [string]$Path, [int]$MinSize, [string]$Contains, [int]$TimeoutSec, [switch]$Loose)
 
   $meta = & curl.exe -sS --max-time $TimeoutSec -A $UA --resolve "${HostName}:443:${Ip}" `
             -o $probeFile -w "%{http_code}|%{time_total}|%{size_download}" "https://$HostName$Path" 2>$null
   $meta = ($meta | Out-String).Trim()
   if ($meta -notmatch '^(\d{3})\|([0-9.]+)\|(\d+)$') { return $null }
   $code = [int]$Matches[1]; $time = [double]$Matches[2]; $size = [int]$Matches[3]
+
+  if ($Loose) {
+    # TLS + an HTTP response is enough: these hosts legitimately answer 404/302 on "/".
+    if ($code -lt 200 -or $code -ge 500) { return $null }
+    return [pscustomobject]@{ Ip = $Ip; Code = $code; Time = $time; Size = $size }
+  }
+
   if ($code -ne 200) { return $null }
   if ($size -lt $MinSize) { return $null }
   if ($Contains -ne '' -and (Test-Path -LiteralPath $probeFile)) {
@@ -95,8 +102,9 @@ foreach ($h in $targets.Keys) {
   Write-Host ""
   Write-Host "== $h ==" -ForegroundColor Cyan
   $good = @()
+  $loose = $cfg.ContainsKey('Loose') -and $cfg.Loose
   foreach ($ip in $cfg.Pool) {
-    $r = Test-One -HostName $h -Ip $ip -Path $cfg.Path -MinSize $minSize -Contains $contains -TimeoutSec $timeout
+    $r = Test-One -HostName $h -Ip $ip -Path $cfg.Path -MinSize $minSize -Contains $contains -TimeoutSec $timeout -Loose:$loose
     if ($r) {
       Write-Host ("   OK  {0,-16} {1,7:N0} bytes  {2:N2}s" -f $r.Ip, $r.Size, $r.Time) -ForegroundColor Green
       $good += $r
