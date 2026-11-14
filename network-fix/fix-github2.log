@@ -41,3 +41,42 @@ SerializationVersion: 1.1.0.1
    --  140.82.112.3     rejected
    --  140.82.113.3     rejected
    --  140.82.114.3     rejected
+   --  140.82.121.3     rejected
+   --  140.82.112.4     rejected
+   --  140.82.113.4     rejected
+   --  140.82.114.4     rejected
+   --  140.82.116.3     rejected
+curl.exe : curl: (28) Connection timed out after 10013 milliseconds
+At C:\Users\10625\Desktop\Illustrated_skill\network-fix\fix-github2.ps1:65 char:11
++   $meta = & curl.exe -sS --max-time $TimeoutSec -A $UA --resolve "${H ...
++           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (curl: (28) Conn...13 milliseconds:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+   --  20.205.243.166   rejected
+curl.exe : curl: (28) Connection timed out after 10004 milliseconds
+At C:\Users\10625\Desktop\Illustrated_skill\network-fix\fix-github2.ps1:65 char:11
++   $meta = & curl.exe -sS --max-time $TimeoutSec -A $UA --resolve "${H ...
++           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (curl: (28) Conn...04 milliseconds:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+   --  20.27.177.113    rejected
+   => nothing reachable for this host
+
+== raw.githubusercontent.com ==
+   OK  185.199.108.133    5,847 bytes  1.35s
+   OK  185.199.109.133    5,847 bytes  1.37s
+   OK  185.199.110.133    5,847 bytes  1.37s
+   => 185.199.108.133  (1.35s)
+
+== github.githubassets.com ==
+   --  185.199.108.154  rejected
+   --  185.199.109.154  rejected
+   --  185.199.110.154  rejected
+   --  185.199.111.154  rejected
+   => nothing reachable for this host
+
+ProbeOnly: hosts was not modified.
+**********************
+Windows PowerShell transcript end
+End time: 20261115044931
+**********************
