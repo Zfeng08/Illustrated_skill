@@ -32,3 +32,12 @@ SerializationVersion: 1.1.0.1
 
 == codeload.github.com ==
    --  140.82.112.9     rejected
+   --  140.82.113.9     rejected
+   --  140.82.114.9     rejected
+   --  140.82.116.9     rejected
+   => nothing reachable for this host
+
+== gist.github.com ==
+   --  140.82.112.3     rejected
+   --  140.82.113.3     rejected
+   --  140.82.114.3     rejected
