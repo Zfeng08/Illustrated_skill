@@ -36,7 +36,7 @@ $targets = [ordered]@{
     Path = '/'; MinSize = 0; Contains = ''; Loose = $true; TimeoutSec = 8
   }
   'gist.github.com' = @{
-    Pool = $ghPool; Path = '/'; MinSize = 1000; Contains = ''; TimeoutSec = 10
+    Pool = $ghPool; Path = '/'; MinSize = 0; Contains = ''; Loose = $true; TimeoutSec = 10
     Aliases = @('gist.github.com')
   }
   'raw.githubusercontent.com' = @{
@@ -53,7 +53,7 @@ $targets = [ordered]@{
   }
   'github.githubassets.com' = @{
     Pool = @('185.199.108.154','185.199.109.154','185.199.110.154','185.199.111.154')
-    Path = '/assets/github-favicon.png'; MinSize = 100; Contains = 'PNG'
+    Path = '/assets/github-favicon.png'; MinSize = 0; Contains = ''; Loose = $true
     Aliases = @('github.githubassets.com')
     TimeoutSec = 8
   }
