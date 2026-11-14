@@ -1,0 +1,26 @@
+﻿**********************
+Windows PowerShell transcript start
+Start time: 20261115044824
+Username: DAMON\10625
+RunAs User: DAMON\10625
+Configuration Name: 
+Machine: DAMON (Microsoft Windows NT 10.0.26200.0)
+Host Application: C:\windows\System32\WindowsPowerShell\v1.0\powershell.exe -NoProfile -ExecutionPolicy Bypass -File fix-github2.ps1 -ProbeOnly -NoPause
+Process ID: 35776
+PSVersion: 5.1.26100.9168
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.26100.9168
+BuildVersion: 10.0.26100.9168
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+
+== github.com ==
+   OK  140.82.112.3     525,829 bytes  2.90s
+   OK  140.82.113.3     525,262 bytes  2.63s
+   OK  140.82.114.3     525,591 bytes  2.94s
+   => 140.82.113.3  (2.63s)
+
+== api.github.com ==
