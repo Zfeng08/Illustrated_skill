@@ -70,9 +70,16 @@ function Test-One {
   if ($code -ne 200) { return $null }
   if ($size -lt $MinSize) { return $null }
   if ($Contains -ne '' -and (Test-Path -LiteralPath $probeFile)) {
-    $head = Get-Content -LiteralPath $probeFile -Raw -Encoding Byte -TotalCount 200000 -ErrorAction SilentlyContinue
-    $text = [System.Text.Encoding]::UTF8.GetString($head)
-    if ($text -notmatch [regex]::Escape($Contains)) { return $null }
+    $ok = $false
+    try {
+      $bytes = [System.IO.File]::ReadAllBytes($probeFile)
+      $take = [Math]::Min($bytes.Length, 200000)
+      if ($take -gt 0) {
+        $text = [System.Text.Encoding]::UTF8.GetString($bytes, 0, $take)
+        if ($text -match [regex]::Escape($Contains)) { $ok = $true }
+      }
+    } catch { $ok = $false }
+    if (-not $ok) { return $null }
   }
   return [pscustomobject]@{ Ip = $Ip; Code = $code; Time = $time; Size = $size }
 }
