@@ -1,4 +1,4 @@
-param([switch]$NoPause)
+param([switch]$NoPause, [switch]$ProbeOnly)
 
 # GitHub hosts pinner v2.
 # v1 only checked the HTTP status code, so a fake 200 could win the race.
@@ -116,6 +116,14 @@ if ($chosen.Count -eq 0) {
 }
 
 # --- rewrite the managed block in hosts ---
+if ($ProbeOnly) {
+  Write-Host ""
+  Write-Host "ProbeOnly: hosts was not modified." -ForegroundColor Yellow
+  if (-not $NoPause) { Read-Host "Press Enter to exit" }
+  Stop-Transcript | Out-Null
+  exit 0
+}
+
 Copy-Item -LiteralPath $hostsPath -Destination (Join-Path $backup 'hosts.bak') -Force
 
 $beginMarker = '# >>> github-pins (managed) >>>'

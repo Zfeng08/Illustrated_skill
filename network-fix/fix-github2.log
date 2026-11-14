@@ -1,0 +1,403 @@
+﻿**********************
+Windows PowerShell transcript start
+Start time: 20261115044627
+Username: DAMON\10625
+RunAs User: DAMON\10625
+Configuration Name: 
+Machine: DAMON (Microsoft Windows NT 10.0.26200.0)
+Host Application: C:\windows\System32\WindowsPowerShell\v1.0\powershell.exe -NoProfile -ExecutionPolicy Bypass -File fix-github2.ps1 -ProbeOnly -NoPause
+Process ID: 43932
+PSVersion: 5.1.26100.9168
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.26100.9168
+BuildVersion: 10.0.26100.9168
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+
+== github.com ==
+PS>TerminatingError(Get-Content): "The 'Raw' and 'TotalCount' parameters cannot be specified in the same command."
+Get-Content : The 'Raw' and 'TotalCount' parameters cannot be specified in the same command.
+At C:\Users\10625\Desktop\Illustrated_skill\network-fix\fix-github2.ps1:73 char:13
++     $head = Get-Content -LiteralPath $probeFile -Raw -Encoding Byte - ...
++             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidOperation: (:) [Get-Content], PSInvalidOperationException
+    + FullyQualifiedErrorId : InvalidOperation,Microsoft.PowerShell.Commands.GetContentCommand
+Get-Content : The 'Raw' and 'TotalCount' parameters cannot be specified in the same command.
+At C:\Users\10625\Desktop\Illustrated_skill\network-fix\fix-github2.ps1:73 char:13
++     $head = Get-Content -LiteralPath $probeFile -Raw -Encoding Byte - ...
++             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidOperation: (:) [Get-Content], PSInvalidOperationException
+    + FullyQualifiedErrorId : InvalidOperation,Microsoft.PowerShell.Commands.GetContentCommand
+
+Exception calling "GetString" with "1" argument(s): "Array cannot be null.
+Parameter name: bytes"
+At C:\Users\10625\Desktop\Illustrated_skill\network-fix\fix-github2.ps1:74 char:5
++     $text = [System.Text.Encoding]::UTF8.GetString($head)
++     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (:) [], MethodInvocationException
+    + FullyQualifiedErrorId : ArgumentNullException
+Exception calling "GetString" with "1" argument(s): "Array cannot be null.
+Parameter name: bytes"
+At C:\Users\10625\Desktop\Illustrated_skill\network-fix\fix-github2.ps1:74 char:5
++     $text = [System.Text.Encoding]::UTF8.GetString($head)
++     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (:) [], MethodInvocationException
+    + FullyQualifiedErrorId : ArgumentNullException
+
+   --  140.82.112.3     rejected
+PS>TerminatingError(Get-Content): "The 'Raw' and 'TotalCount' parameters cannot be specified in the same command."
+Get-Content : The 'Raw' and 'TotalCount' parameters cannot be specified in the same command.
+At C:\Users\10625\Desktop\Illustrated_skill\network-fix\fix-github2.ps1:73 char:13
++     $head = Get-Content -LiteralPath $probeFile -Raw -Encoding Byte - ...
++             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidOperation: (:) [Get-Content], PSInvalidOperationException
+    + FullyQualifiedErrorId : InvalidOperation,Microsoft.PowerShell.Commands.GetContentCommand
+Get-Content : The 'Raw' and 'TotalCount' parameters cannot be specified in the same command.
+At C:\Users\10625\Desktop\Illustrated_skill\network-fix\fix-github2.ps1:73 char:13
++     $head = Get-Content -LiteralPath $probeFile -Raw -Encoding Byte - ...
++             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidOperation: (:) [Get-Content], PSInvalidOperationException
+    + FullyQualifiedErrorId : InvalidOperation,Microsoft.PowerShell.Commands.GetContentCommand
+
+Exception calling "GetString" with "1" argument(s): "Array cannot be null.
+Parameter name: bytes"
+At C:\Users\10625\Desktop\Illustrated_skill\network-fix\fix-github2.ps1:74 char:5
++     $text = [System.Text.Encoding]::UTF8.GetString($head)
++     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (:) [], MethodInvocationException
+    + FullyQualifiedErrorId : ArgumentNullException
+Exception calling "GetString" with "1" argument(s): "Array cannot be null.
+Parameter name: bytes"
+At C:\Users\10625\Desktop\Illustrated_skill\network-fix\fix-github2.ps1:74 char:5
++     $text = [System.Text.Encoding]::UTF8.GetString($head)
++     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (:) [], MethodInvocationException
+    + FullyQualifiedErrorId : ArgumentNullException
+
+   --  140.82.113.3     rejected
+PS>TerminatingError(Get-Content): "The 'Raw' and 'TotalCount' parameters cannot be specified in the same command."
+Get-Content : The 'Raw' and 'TotalCount' parameters cannot be specified in the same command.
+At C:\Users\10625\Desktop\Illustrated_skill\network-fix\fix-github2.ps1:73 char:13
++     $head = Get-Content -LiteralPath $probeFile -Raw -Encoding Byte - ...
++             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidOperation: (:) [Get-Content], PSInvalidOperationException
+    + FullyQualifiedErrorId : InvalidOperation,Microsoft.PowerShell.Commands.GetContentCommand
+Get-Content : The 'Raw' and 'TotalCount' parameters cannot be specified in the same command.
+At C:\Users\10625\Desktop\Illustrated_skill\network-fix\fix-github2.ps1:73 char:13
++     $head = Get-Content -LiteralPath $probeFile -Raw -Encoding Byte - ...
++             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidOperation: (:) [Get-Content], PSInvalidOperationException
+    + FullyQualifiedErrorId : InvalidOperation,Microsoft.PowerShell.Commands.GetContentCommand
+
+Exception calling "GetString" with "1" argument(s): "Array cannot be null.
+Parameter name: bytes"
+At C:\Users\10625\Desktop\Illustrated_skill\network-fix\fix-github2.ps1:74 char:5
++     $text = [System.Text.Encoding]::UTF8.GetString($head)
++     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (:) [], MethodInvocationException
+    + FullyQualifiedErrorId : ArgumentNullException
+Exception calling "GetString" with "1" argument(s): "Array cannot be null.
+Parameter name: bytes"
+At C:\Users\10625\Desktop\Illustrated_skill\network-fix\fix-github2.ps1:74 char:5
++     $text = [System.Text.Encoding]::UTF8.GetString($head)
++     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (:) [], MethodInvocationException
+    + FullyQualifiedErrorId : ArgumentNullException
+
+   --  140.82.114.3     rejected
+PS>TerminatingError(Get-Content): "The 'Raw' and 'TotalCount' parameters cannot be specified in the same command."
+Get-Content : The 'Raw' and 'TotalCount' parameters cannot be specified in the same command.
+At C:\Users\10625\Desktop\Illustrated_skill\network-fix\fix-github2.ps1:73 char:13
++     $head = Get-Content -LiteralPath $probeFile -Raw -Encoding Byte - ...
++             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidOperation: (:) [Get-Content], PSInvalidOperationException
+    + FullyQualifiedErrorId : InvalidOperation,Microsoft.PowerShell.Commands.GetContentCommand
+Get-Content : The 'Raw' and 'TotalCount' parameters cannot be specified in the same command.
+At C:\Users\10625\Desktop\Illustrated_skill\network-fix\fix-github2.ps1:73 char:13
++     $head = Get-Content -LiteralPath $probeFile -Raw -Encoding Byte - ...
++             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidOperation: (:) [Get-Content], PSInvalidOperationException
+    + FullyQualifiedErrorId : InvalidOperation,Microsoft.PowerShell.Commands.GetContentCommand
+
+Exception calling "GetString" with "1" argument(s): "Array cannot be null.
+Parameter name: bytes"
+At C:\Users\10625\Desktop\Illustrated_skill\network-fix\fix-github2.ps1:74 char:5
++     $text = [System.Text.Encoding]::UTF8.GetString($head)
++     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (:) [], MethodInvocationException
+    + FullyQualifiedErrorId : ArgumentNullException
+Exception calling "GetString" with "1" argument(s): "Array cannot be null.
+Parameter name: bytes"
+At C:\Users\10625\Desktop\Illustrated_skill\network-fix\fix-github2.ps1:74 char:5
++     $text = [System.Text.Encoding]::UTF8.GetString($head)
++     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (:) [], MethodInvocationException
+    + FullyQualifiedErrorId : ArgumentNullException
+
+   --  140.82.121.3     rejected
+PS>TerminatingError(Get-Content): "The 'Raw' and 'TotalCount' parameters cannot be specified in the same command."
+Get-Content : The 'Raw' and 'TotalCount' parameters cannot be specified in the same command.
+At C:\Users\10625\Desktop\Illustrated_skill\network-fix\fix-github2.ps1:73 char:13
++     $head = Get-Content -LiteralPath $probeFile -Raw -Encoding Byte - ...
++             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidOperation: (:) [Get-Content], PSInvalidOperationException
+    + FullyQualifiedErrorId : InvalidOperation,Microsoft.PowerShell.Commands.GetContentCommand
+Get-Content : The 'Raw' and 'TotalCount' parameters cannot be specified in the same command.
+At C:\Users\10625\Desktop\Illustrated_skill\network-fix\fix-github2.ps1:73 char:13
++     $head = Get-Content -LiteralPath $probeFile -Raw -Encoding Byte - ...
++             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidOperation: (:) [Get-Content], PSInvalidOperationException
+    + FullyQualifiedErrorId : InvalidOperation,Microsoft.PowerShell.Commands.GetContentCommand
+
+Exception calling "GetString" with "1" argument(s): "Array cannot be null.
+Parameter name: bytes"
+At C:\Users\10625\Desktop\Illustrated_skill\network-fix\fix-github2.ps1:74 char:5
++     $text = [System.Text.Encoding]::UTF8.GetString($head)
++     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (:) [], MethodInvocationException
+    + FullyQualifiedErrorId : ArgumentNullException
+Exception calling "GetString" with "1" argument(s): "Array cannot be null.
+Parameter name: bytes"
+At C:\Users\10625\Desktop\Illustrated_skill\network-fix\fix-github2.ps1:74 char:5
++     $text = [System.Text.Encoding]::UTF8.GetString($head)
++     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (:) [], MethodInvocationException
+    + FullyQualifiedErrorId : ArgumentNullException
+
+   --  140.82.112.4     rejected
+PS>TerminatingError(Get-Content): "The 'Raw' and 'TotalCount' parameters cannot be specified in the same command."
+Get-Content : The 'Raw' and 'TotalCount' parameters cannot be specified in the same command.
+At C:\Users\10625\Desktop\Illustrated_skill\network-fix\fix-github2.ps1:73 char:13
++     $head = Get-Content -LiteralPath $probeFile -Raw -Encoding Byte - ...
++             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidOperation: (:) [Get-Content], PSInvalidOperationException
+    + FullyQualifiedErrorId : InvalidOperation,Microsoft.PowerShell.Commands.GetContentCommand
+Get-Content : The 'Raw' and 'TotalCount' parameters cannot be specified in the same command.
+At C:\Users\10625\Desktop\Illustrated_skill\network-fix\fix-github2.ps1:73 char:13
++     $head = Get-Content -LiteralPath $probeFile -Raw -Encoding Byte - ...
++             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidOperation: (:) [Get-Content], PSInvalidOperationException
+    + FullyQualifiedErrorId : InvalidOperation,Microsoft.PowerShell.Commands.GetContentCommand
+
+Exception calling "GetString" with "1" argument(s): "Array cannot be null.
+Parameter name: bytes"
+At C:\Users\10625\Desktop\Illustrated_skill\network-fix\fix-github2.ps1:74 char:5
++     $text = [System.Text.Encoding]::UTF8.GetString($head)
++     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (:) [], MethodInvocationException
+    + FullyQualifiedErrorId : ArgumentNullException
+Exception calling "GetString" with "1" argument(s): "Array cannot be null.
+Parameter name: bytes"
+At C:\Users\10625\Desktop\Illustrated_skill\network-fix\fix-github2.ps1:74 char:5
++     $text = [System.Text.Encoding]::UTF8.GetString($head)
++     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (:) [], MethodInvocationException
+    + FullyQualifiedErrorId : ArgumentNullException
+
+   --  140.82.113.4     rejected
+PS>TerminatingError(Get-Content): "The 'Raw' and 'TotalCount' parameters cannot be specified in the same command."
+Get-Content : The 'Raw' and 'TotalCount' parameters cannot be specified in the same command.
+At C:\Users\10625\Desktop\Illustrated_skill\network-fix\fix-github2.ps1:73 char:13
++     $head = Get-Content -LiteralPath $probeFile -Raw -Encoding Byte - ...
++             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidOperation: (:) [Get-Content], PSInvalidOperationException
+    + FullyQualifiedErrorId : InvalidOperation,Microsoft.PowerShell.Commands.GetContentCommand
+Get-Content : The 'Raw' and 'TotalCount' parameters cannot be specified in the same command.
+At C:\Users\10625\Desktop\Illustrated_skill\network-fix\fix-github2.ps1:73 char:13
++     $head = Get-Content -LiteralPath $probeFile -Raw -Encoding Byte - ...
++             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidOperation: (:) [Get-Content], PSInvalidOperationException
+    + FullyQualifiedErrorId : InvalidOperation,Microsoft.PowerShell.Commands.GetContentCommand
+
+Exception calling "GetString" with "1" argument(s): "Array cannot be null.
+Parameter name: bytes"
+At C:\Users\10625\Desktop\Illustrated_skill\network-fix\fix-github2.ps1:74 char:5
++     $text = [System.Text.Encoding]::UTF8.GetString($head)
++     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (:) [], MethodInvocationException
+    + FullyQualifiedErrorId : ArgumentNullException
+Exception calling "GetString" with "1" argument(s): "Array cannot be null.
+Parameter name: bytes"
+At C:\Users\10625\Desktop\Illustrated_skill\network-fix\fix-github2.ps1:74 char:5
++     $text = [System.Text.Encoding]::UTF8.GetString($head)
++     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (:) [], MethodInvocationException
+    + FullyQualifiedErrorId : ArgumentNullException
+
+   --  140.82.114.4     rejected
+PS>TerminatingError(Get-Content): "The 'Raw' and 'TotalCount' parameters cannot be specified in the same command."
+Get-Content : The 'Raw' and 'TotalCount' parameters cannot be specified in the same command.
+At C:\Users\10625\Desktop\Illustrated_skill\network-fix\fix-github2.ps1:73 char:13
++     $head = Get-Content -LiteralPath $probeFile -Raw -Encoding Byte - ...
++             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidOperation: (:) [Get-Content], PSInvalidOperationException
+    + FullyQualifiedErrorId : InvalidOperation,Microsoft.PowerShell.Commands.GetContentCommand
+Get-Content : The 'Raw' and 'TotalCount' parameters cannot be specified in the same command.
+At C:\Users\10625\Desktop\Illustrated_skill\network-fix\fix-github2.ps1:73 char:13
++     $head = Get-Content -LiteralPath $probeFile -Raw -Encoding Byte - ...
++             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidOperation: (:) [Get-Content], PSInvalidOperationException
+    + FullyQualifiedErrorId : InvalidOperation,Microsoft.PowerShell.Commands.GetContentCommand
+
+Exception calling "GetString" with "1" argument(s): "Array cannot be null.
+Parameter name: bytes"
+At C:\Users\10625\Desktop\Illustrated_skill\network-fix\fix-github2.ps1:74 char:5
++     $text = [System.Text.Encoding]::UTF8.GetString($head)
++     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (:) [], MethodInvocationException
+    + FullyQualifiedErrorId : ArgumentNullException
+Exception calling "GetString" with "1" argument(s): "Array cannot be null.
+Parameter name: bytes"
+At C:\Users\10625\Desktop\Illustrated_skill\network-fix\fix-github2.ps1:74 char:5
++     $text = [System.Text.Encoding]::UTF8.GetString($head)
++     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (:) [], MethodInvocationException
+    + FullyQualifiedErrorId : ArgumentNullException
+
+   --  140.82.116.3     rejected
+curl.exe : curl: (28) Connection timed out after 10002 milliseconds
+At C:\Users\10625\Desktop\Illustrated_skill\network-fix\fix-github2.ps1:65 char:11
++   $meta = & curl.exe -sS --max-time $TimeoutSec -A $UA --resolve "${H ...
++           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (curl: (28) Conn...02 milliseconds:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+   --  20.205.243.166   rejected
+curl.exe : curl: (28) Connection timed out after 10012 milliseconds
+At C:\Users\10625\Desktop\Illustrated_skill\network-fix\fix-github2.ps1:65 char:11
++   $meta = & curl.exe -sS --max-time $TimeoutSec -A $UA --resolve "${H ...
++           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (curl: (28) Conn...12 milliseconds:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+   --  20.27.177.113    rejected
+   => nothing reachable for this host
+
+== api.github.com ==
+PS>TerminatingError(Get-Content): "The 'Raw' and 'TotalCount' parameters cannot be specified in the same command."
+Get-Content : The 'Raw' and 'TotalCount' parameters cannot be specified in the same command.
+At C:\Users\10625\Desktop\Illustrated_skill\network-fix\fix-github2.ps1:73 char:13
++     $head = Get-Content -LiteralPath $probeFile -Raw -Encoding Byte - ...
++             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidOperation: (:) [Get-Content], PSInvalidOperationException
+    + FullyQualifiedErrorId : InvalidOperation,Microsoft.PowerShell.Commands.GetContentCommand
+Get-Content : The 'Raw' and 'TotalCount' parameters cannot be specified in the same command.
+At C:\Users\10625\Desktop\Illustrated_skill\network-fix\fix-github2.ps1:73 char:13
++     $head = Get-Content -LiteralPath $probeFile -Raw -Encoding Byte - ...
++             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidOperation: (:) [Get-Content], PSInvalidOperationException
+    + FullyQualifiedErrorId : InvalidOperation,Microsoft.PowerShell.Commands.GetContentCommand
+
+Exception calling "GetString" with "1" argument(s): "Array cannot be null.
+Parameter name: bytes"
+At C:\Users\10625\Desktop\Illustrated_skill\network-fix\fix-github2.ps1:74 char:5
++     $text = [System.Text.Encoding]::UTF8.GetString($head)
++     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (:) [], MethodInvocationException
+    + FullyQualifiedErrorId : ArgumentNullException
+Exception calling "GetString" with "1" argument(s): "Array cannot be null.
+Parameter name: bytes"
+At C:\Users\10625\Desktop\Illustrated_skill\network-fix\fix-github2.ps1:74 char:5
++     $text = [System.Text.Encoding]::UTF8.GetString($head)
++     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (:) [], MethodInvocationException
+    + FullyQualifiedErrorId : ArgumentNullException
+
+   --  140.82.112.5     rejected
+PS>TerminatingError(Get-Content): "The 'Raw' and 'TotalCount' parameters cannot be specified in the same command."
+Get-Content : The 'Raw' and 'TotalCount' parameters cannot be specified in the same command.
+At C:\Users\10625\Desktop\Illustrated_skill\network-fix\fix-github2.ps1:73 char:13
++     $head = Get-Content -LiteralPath $probeFile -Raw -Encoding Byte - ...
++             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidOperation: (:) [Get-Content], PSInvalidOperationException
+    + FullyQualifiedErrorId : InvalidOperation,Microsoft.PowerShell.Commands.GetContentCommand
+Get-Content : The 'Raw' and 'TotalCount' parameters cannot be specified in the same command.
+At C:\Users\10625\Desktop\Illustrated_skill\network-fix\fix-github2.ps1:73 char:13
++     $head = Get-Content -LiteralPath $probeFile -Raw -Encoding Byte - ...
++             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidOperation: (:) [Get-Content], PSInvalidOperationException
+    + FullyQualifiedErrorId : InvalidOperation,Microsoft.PowerShell.Commands.GetContentCommand
+
+Exception calling "GetString" with "1" argument(s): "Array cannot be null.
+Parameter name: bytes"
+At C:\Users\10625\Desktop\Illustrated_skill\network-fix\fix-github2.ps1:74 char:5
++     $text = [System.Text.Encoding]::UTF8.GetString($head)
++     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (:) [], MethodInvocationException
+    + FullyQualifiedErrorId : ArgumentNullException
+Exception calling "GetString" with "1" argument(s): "Array cannot be null.
+Parameter name: bytes"
+At C:\Users\10625\Desktop\Illustrated_skill\network-fix\fix-github2.ps1:74 char:5
++     $text = [System.Text.Encoding]::UTF8.GetString($head)
++     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (:) [], MethodInvocationException
+    + FullyQualifiedErrorId : ArgumentNullException
+
+   --  140.82.113.5     rejected
+PS>TerminatingError(Get-Content): "The 'Raw' and 'TotalCount' parameters cannot be specified in the same command."
+Get-Content : The 'Raw' and 'TotalCount' parameters cannot be specified in the same command.
+At C:\Users\10625\Desktop\Illustrated_skill\network-fix\fix-github2.ps1:73 char:13
++     $head = Get-Content -LiteralPath $probeFile -Raw -Encoding Byte - ...
++             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidOperation: (:) [Get-Content], PSInvalidOperationException
+    + FullyQualifiedErrorId : InvalidOperation,Microsoft.PowerShell.Commands.GetContentCommand
+Get-Content : The 'Raw' and 'TotalCount' parameters cannot be specified in the same command.
+At C:\Users\10625\Desktop\Illustrated_skill\network-fix\fix-github2.ps1:73 char:13
++     $head = Get-Content -LiteralPath $probeFile -Raw -Encoding Byte - ...
++             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidOperation: (:) [Get-Content], PSInvalidOperationException
+    + FullyQualifiedErrorId : InvalidOperation,Microsoft.PowerShell.Commands.GetContentCommand
+
+Exception calling "GetString" with "1" argument(s): "Array cannot be null.
+Parameter name: bytes"
+At C:\Users\10625\Desktop\Illustrated_skill\network-fix\fix-github2.ps1:74 char:5
++     $text = [System.Text.Encoding]::UTF8.GetString($head)
++     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (:) [], MethodInvocationException
+    + FullyQualifiedErrorId : ArgumentNullException
+Exception calling "GetString" with "1" argument(s): "Array cannot be null.
+Parameter name: bytes"
+At C:\Users\10625\Desktop\Illustrated_skill\network-fix\fix-github2.ps1:74 char:5
++     $text = [System.Text.Encoding]::UTF8.GetString($head)
++     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (:) [], MethodInvocationException
+    + FullyQualifiedErrorId : ArgumentNullException
+
+   --  140.82.114.5     rejected
+PS>TerminatingError(Get-Content): "The 'Raw' and 'TotalCount' parameters cannot be specified in the same command."
+Get-Content : The 'Raw' and 'TotalCount' parameters cannot be specified in the same command.
+At C:\Users\10625\Desktop\Illustrated_skill\network-fix\fix-github2.ps1:73 char:13
++     $head = Get-Content -LiteralPath $probeFile -Raw -Encoding Byte - ...
++             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidOperation: (:) [Get-Content], PSInvalidOperationException
+    + FullyQualifiedErrorId : InvalidOperation,Microsoft.PowerShell.Commands.GetContentCommand
+Get-Content : The 'Raw' and 'TotalCount' parameters cannot be specified in the same command.
+At C:\Users\10625\Desktop\Illustrated_skill\network-fix\fix-github2.ps1:73 char:13
++     $head = Get-Content -LiteralPath $probeFile -Raw -Encoding Byte - ...
++             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidOperation: (:) [Get-Content], PSInvalidOperationException
+    + FullyQualifiedErrorId : InvalidOperation,Microsoft.PowerShell.Commands.GetContentCommand
+
+Exception calling "GetString" with "1" argument(s): "Array cannot be null.
+Parameter name: bytes"
+At C:\Users\10625\Desktop\Illustrated_skill\network-fix\fix-github2.ps1:74 char:5
++     $text = [System.Text.Encoding]::UTF8.GetString($head)
++     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (:) [], MethodInvocationException
+    + FullyQualifiedErrorId : ArgumentNullException
+Exception calling "GetString" with "1" argument(s): "Array cannot be null.
+Parameter name: bytes"
+At C:\Users\10625\Desktop\Illustrated_skill\network-fix\fix-github2.ps1:74 char:5
++     $text = [System.Text.Encoding]::UTF8.GetString($head)
++     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (:) [], MethodInvocationException
+    + FullyQualifiedErrorId : ArgumentNullException
+
+   --  20.205.243.168   rejected
+   => nothing reachable for this host
+
+== codeload.github.com ==
+   --  140.82.112.9     rejected
+   --  140.82.113.9     rejected
+   --  140.82.114.9     rejected
