@@ -36,9 +36,27 @@ function Write-FallbackLog {
 # 2) Make sure the watcher is running.
 try {
     $task = Get-ScheduledTask -TaskName $WatchTaskName -ErrorAction Stop
-    if ($task.State -ne 'Running') {
+    # The task action is wscript, which exits as soon as it spawns the hidden watcher,
+    # so $task.State returns to Ready while the watcher is still alive. Check the
+    # watcher process itself, otherwise every run starts one more watcher (leak).
+    $alive = @(Get-CimInstance Win32_Process -Filter "Name='powershell.exe'" -ErrorAction Stop |
+        Where-Object { $_.CommandLine -like '*AutoSync.ps1*' }).Count
+    # The watcher logs every idle check, so a silent log means it is wedged (e.g. blocked
+    # on the log file itself). Kill it so the check below starts a fresh one.
+    if ($alive -gt 0) {
+        $staleMin = ((Get-Date) - (Get-Item -LiteralPath $LogFile).LastWriteTime).TotalMinutes
+        if ($staleMin -gt 15) {
+            foreach ($w in @(Get-CimInstance Win32_Process -Filter "Name='powershell.exe'" |
+                Where-Object { $_.CommandLine -like '*AutoSync.ps1*' })) {
+                Stop-Process -Id $w.ProcessId -Force -ErrorAction SilentlyContinue
+            }
+            Write-FallbackLog ('Watcher was stuck ({0:N0} min without log output) - killed it.' -f $staleMin) 'WARN'
+            $alive = 0
+        }
+    }
+    if ($alive -eq 0) {
         Start-ScheduledTask -TaskName $WatchTaskName
-        Write-FallbackLog ('Watcher was not running (state: {0}) - restarted it.' -f $task.State) 'WARN'
+        Write-FallbackLog ('No watcher process was running (task state: {0}) - restarted it.' -f $task.State) 'WARN'
     }
 } catch {
     Write-FallbackLog ('Could not check the watcher task: ' + $_.Exception.Message) 'WARN'
