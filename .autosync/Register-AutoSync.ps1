@@ -46,7 +46,7 @@ $FallbackTask = "$TaskPrefix-Fallback"
 
 # wscript.exe is a GUI-subsystem host: it allocates no console, so the tasks never flash a
 # PowerShell window (PowerShell's own -WindowStyle Hidden is not enough when Windows Terminal
-# is the default console host). See the header of RunHidden.vbs.
+# is the default console host). See the header of RunHidden.js.
 $WscriptExe = Join-Path $env:SystemRoot 'System32\wscript.exe'
 
 # --- Remove ----------------------------------------------------------------
